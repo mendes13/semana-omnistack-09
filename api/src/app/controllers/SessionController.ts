@@ -9,7 +9,7 @@ class SessionController {
     const userExists = await User.findOne({ email });
 
     if (userExists) {
-      return res.json({ userExists });
+      return res.json(userExists );
     }
 
     const user = await User.create({ email });
