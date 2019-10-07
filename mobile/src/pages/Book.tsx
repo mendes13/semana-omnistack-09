@@ -14,6 +14,7 @@ import {
   NavigationParams,
 } from 'react-navigation';
 import api from '../services/api';
+import DateInput from '../components/DateInput';
 
 interface Props {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>;
@@ -21,7 +22,7 @@ interface Props {
 
 const Book: React.FC<Props> = ({ navigation }) => {
   const id = navigation.getParam('id');
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState(new Date());
 
   async function handleSubmit() {
     const user_id = await AsyncStorage.getItem('user');
@@ -49,15 +50,7 @@ const Book: React.FC<Props> = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.label}>DATA DE INTERESSE *</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Qual data você quer reservar?"
-        placeholderTextColor="#999"
-        autoCapitalize="words"
-        autoCorrect={false}
-        value={date}
-        onChangeText={setDate}
-      />
+      <DateInput date={date} onChange={setDate} />
       <TouchableOpacity style={styles.button} onPress={handleSubmit}>
         <Text style={styles.buttonText}>Solicitar Reserva</Text>
       </TouchableOpacity>
@@ -82,17 +75,6 @@ const styles = StyleSheet.create({
     color: '#444',
     marginBottom: 8,
     marginTop: 30,
-  },
-
-  input: {
-    borderWidth: 1,
-    borderColor: '#ddd',
-    paddingHorizontal: 20,
-    fontSize: 16,
-    color: '#444',
-    height: 44,
-    marginBottom: 20,
-    borderRadius: 2,
   },
 
   button: {

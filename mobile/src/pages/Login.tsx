@@ -43,7 +43,7 @@ const Login: React.FC<Props> = ({ navigation }) => {
 
   useEffect(() => {
     async function getUser() {
-      const user = AsyncStorage.getItem('user');
+      const user = await AsyncStorage.getItem('user');
 
       if (user) {
         navigation.navigate('List');
