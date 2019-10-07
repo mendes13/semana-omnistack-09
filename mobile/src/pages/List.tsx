@@ -41,7 +41,7 @@ const List: React.FC = () => {
 
   useEffect(() => {
     async function loadSocket() {
-      const user_id = AsyncStorage.getItem('user');
+      const user_id = await AsyncStorage.getItem('user');
       const socket = socketio('http://localhost:5000', {
         query: { user_id },
       });

@@ -31,7 +31,7 @@ const Book: React.FC<Props> = ({ navigation }) => {
       'bookings',
       {
         date,
-        spot: id,
+        spot_id: id,
       },
       {
         headers: { user_id },

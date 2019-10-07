@@ -84,7 +84,7 @@ const Dashboard: React.FC = () => {
   }
 
   async function handleReject(id: string) {
-    await api.post(`bookings/${id}/approvals`);
+    await api.post(`bookings/${id}/rejections`);
     setRequests(requests.filter(request => request._id !== id));
   }
 
