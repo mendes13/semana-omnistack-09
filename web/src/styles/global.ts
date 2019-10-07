@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 import background from '../assets/background.jpg';
 
@@ -38,6 +38,10 @@ export default createGlobalStyle`
 
   ul {
     list-style: none;
+  }
+
+  button {
+    cursor: pointer;
   }
 
 `;

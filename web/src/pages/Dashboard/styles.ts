@@ -4,6 +4,28 @@ interface Props {
   bg: string;
 }
 
+export const Notifications = styled.ul`
+  margin-bottom: 15px;
+
+  li {
+    font-size: 16px;
+    line-height: 24px;
+
+    button {
+      margin-right: 10px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  }
+`;
+
+export const AcceptButton = styled.button`
+  color: #84c870;
+`;
+export const RejectButton = styled.button`
+  color: #e55e5e;
+`;
+
 export const SpotList = styled.ul`
   width: 100%;
   list-style: none;
